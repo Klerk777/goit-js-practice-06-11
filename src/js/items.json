@@ -1,0 +1,15 @@
+//------------------ data moodel -> array of objects (tasks):
+[
+  {
+    "task": "купити хліба",
+    "isDone": false
+  },
+  {
+    "task": "купити молоко",
+    "isDone": false
+  },
+  {
+    "task": "поповнити телефон",
+    "isDone": true
+  }
+]

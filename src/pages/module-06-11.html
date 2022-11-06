@@ -14,16 +14,38 @@
       <h1 class="todo__title">Your's ToDo app</h1>
       <form class="add-task-form">
         <label class="add-task-form__label">
-          Label
-          <input class="add-task-form__input" type="text" />
+          Enter task you whant to add
+          <input class="add-task-form__input" name="text" type="text" placeholder="enter text..." />
         </label>
-        <button class="add-task-form__btn" type="button">Add task</button>
+        <button class="add-task-form__btn" type="submit">Add task</button>
       </form>
       <ul class="task-list">
-        <li class="task-list__item">Task 1</li>
-        <li class="task-list__item">Task 2</li>
-        <li class="task-list__item">Task 3</li>
+        <!-- <li class="task-list__item">
+          <div class="task-list__box">
+            <input class="task-list__check" type="checkbox" checked />
+            <span class="task-list__text">Task 1</span>
+          </div>
+          <button class="task-list__delbtn" type="button">x</button>
+        </li>
+        <!-- <li class="task-list__item">
+          <div class="task-list__box">
+            <input class="task-list__check" type="checkbox" />
+            <span class="task-list__text">Task 2</span>
+          </div>
+          <button class="task-list__delbtn" type="button">x</button>
+        </li> -->
+        <!-- <li class="task-list__item">
+          <div class="task-list__box">
+            <input class="task-list__check" type="checkbox" />
+            <span class="task-list__text">Task 3</span>
+          </div>
+          <button class="task-list__delbtn" type="button">
+            <img src="../images/iconmonstr-trash-can-10.svg" alt="delete" />
+          </button>
+        </li> -->
+        -->
       </ul>
     </div>
+    <script type="module" src="../js/ToDo.js"></script>
   </body>
 </html>
