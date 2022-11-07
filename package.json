@@ -1,11 +1,11 @@
 {
-  "name": "goit-js-hw-06-11",
+  "name": "goit-js-practice-06-11",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/Klerk777/goit-js-hw-06-11",
+  "homepage": "https://github.com/Klerk777/goit-js-practice-06-11",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-06-11/"
+    "build": "parcel build src/*.html --public-url /goit-js-practice-06-11/"
   },
   "repository": {
     "type": "git",
