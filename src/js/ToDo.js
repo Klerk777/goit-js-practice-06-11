@@ -3,11 +3,9 @@ import items from './items';
 
 //------------------ object of DOM's refs:
 const refs = {
-  body: document.body,
   form: document.querySelector('.add-task-form'),
   addBtn: document.querySelector('.add-task-form__btn'),
   list: document.querySelector('.task-list'),
-  taskText: document.querySelector('.task-list__text'),
 };
 
 //---------------------------- function getItemTamplate ---------------------------------------------
@@ -50,13 +48,16 @@ function addTaskToTaskArray(event) {
   items.push(newTask);
 }
 
+//---------------------------- function getIndexOfTargetObject  ---------------------------------------------------
+function getIndexOfTargetObject(event) {
+  const targetTaskText = event.target.parentNode.querySelector('.task-list__text').textContent;
+  const targetObjIndex = items.findIndex(item => item.task === targetTaskText);
+  return targetObjIndex;
+}
+
 //---------------------------- function deleteTaskFromTaskArray  ------------------------------------------------
 function deleteTaskFromTaskArray(event) {
-  // finde target object in array
-  const curentTaskText = event.target.parentNode.querySelector('.task-list__text').textContent;
-  const curentObjIndex = items.findIndex(item => item.task === curentTaskText);
-  // delet object from array
-  items.splice(curentObjIndex, 1);
+  items.splice(getIndexOfTargetObject(event), 1);
 }
 
 //---------------------------- function onAddTaskBtnClick  ------------------------------------------------
@@ -70,6 +71,7 @@ const onAddTaskBtnClick = event => {
   addTaskToTaskArray(event);
   refs.form.reset();
   render();
+  console.table(items);
 };
 
 //---------------------------- function onDeleteBtnClick  ------------------------------------------------
@@ -79,11 +81,23 @@ const onDeleteBtnClick = event => {
   }
   deleteTaskFromTaskArray(event); // delete element from data-model array
   event.target.parentNode.remove(); // delete element from DOM
+  console.table(items);
+};
+
+//---------------------------- function onCheckboxClick  ------------------------------------------------
+const onCheckboxClick = event => {
+  if (event.target.nodeName !== 'INPUT') {
+    return;
+  }
+  //change isDone property of data object
+  items[getIndexOfTargetObject(event)].isDone = event.target.checked;
+  console.table(items);
 };
 
 //----------------------- add event listner on form submit, and adds new task  ---------------------
 refs.form.addEventListener('submit', onAddTaskBtnClick);
 refs.list.addEventListener('click', onDeleteBtnClick);
+refs.list.addEventListener('click', onCheckboxClick);
 
 // run
 render();
