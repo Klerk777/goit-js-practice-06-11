@@ -39,6 +39,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     background-color: hsla(110, 100%, 51%, 0.61);
     transform: scale(1.1);
   }
@@ -81,6 +82,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     background-color: hsla(0, 100%, 51%, 0.589);
     transform: scale(1.1);
   }
